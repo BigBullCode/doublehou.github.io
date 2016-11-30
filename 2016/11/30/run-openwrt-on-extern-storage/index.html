@@ -4,17 +4,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>openSUSE and archlinux user</title>
+  <title>run openwrt on extern storage | openSUSE and archlinux user</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="占位">
-<meta property="og:type" content="website">
-<meta property="og:title" content="openSUSE and archlinux user">
-<meta property="og:url" content="https://doublehou.github.io/index.html">
+  <meta name="description" content="all from openwrt wiki
+
+install pacagkes :
+1opkg install  blkid block-mount kmod-fs-ext4 kmod-usb2 kmod-usb-uhci kmod-usb-ohci kmod-usb-storage block-mount kmod-fs-ext4 kmod-usb-storage-extras
+
+insert">
+<meta property="og:type" content="article">
+<meta property="og:title" content="run openwrt on extern storage">
+<meta property="og:url" content="https://doublehou.github.io/2016/11/30/run-openwrt-on-extern-storage/index.html">
 <meta property="og:site_name" content="openSUSE and archlinux user">
-<meta property="og:description" content="占位">
+<meta property="og:description" content="all from openwrt wiki
+
+install pacagkes :
+1opkg install  blkid block-mount kmod-fs-ext4 kmod-usb2 kmod-usb-uhci kmod-usb-ohci kmod-usb-storage block-mount kmod-fs-ext4 kmod-usb-storage-extras
+
+insert">
+<meta property="og:updated_time" content="2016-11-30T03:49:57.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="openSUSE and archlinux user">
-<meta name="twitter:description" content="占位">
+<meta name="twitter:title" content="run openwrt on extern storage">
+<meta name="twitter:description" content="all from openwrt wiki
+
+install pacagkes :
+1opkg install  blkid block-mount kmod-fs-ext4 kmod-usb2 kmod-usb-uhci kmod-usb-ohci kmod-usb-storage block-mount kmod-fs-ext4 kmod-usb-storage-extras
+
+insert">
   
     <link rel="alternative" href="/atom.xml" title="openSUSE and archlinux user" type="application/atom+xml">
   
@@ -70,9 +86,7 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-    <article id="post-run-openwrt-on-extern-storage" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-run-openwrt-on-extern-storage" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/30/run-openwrt-on-extern-storage/" class="article-date">
   <time datetime="2016-11-30T03:33:29.000Z" itemprop="datePublished">2016-11-30</time>
@@ -85,8 +99,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/30/run-openwrt-on-extern-storage/">run openwrt on extern storage</a>
+    <h1 class="article-title" itemprop="name">
+      run openwrt on extern storage
     </h1>
   
 
@@ -128,116 +142,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-《深度探索Linux操作系统》构建过程中的问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/29/《深度探索Linux操作系统》构建过程中的问题/" class="article-date">
-  <time datetime="2016-11-29T12:32:55.000Z" itemprop="datePublished">2016-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/29/《深度探索Linux操作系统》构建过程中的问题/">《深度探索Linux操作系统》构建过程中的问题</a>
-    </h1>
+    <a href="/2016/11/29/《深度探索Linux操作系统》构建过程中的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">《深度探索Linux操作系统》构建过程中的问题</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今日准备“按图索骥”，开始按书中所说，从头构建一个linux系统。</p>
-<p>首先在openSUSE 20161123 上完成了准备工作。<br>开始编译了。<br>但是卡在了第一步：build binutils-2.23 。<br>报了一个错误： error:right-hand operand of comma expression has no effect …</p>
-<p>wtf.</p>
-<p>然后我就想哪里错了呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $MACRTYPE</span><br></pre></td></tr></table></figure></p>
-<p>看到了“x86_64”。我想大概是这个原因。书上的是”i386-pc-linux-gnu”这样的。</p>
-<p>那我看看笔记本中的archlinux显示啥吧…then，出现了“x86_64-unknown-linux-gnu”,看起来差不多嘛。</p>
-<p>又做了一遍准备工作。然而，又报错了。。。</p>
-<p>发了一会儿呆。。。</p>
-<p>突然想到，大概是书中的光盘里的binutils太老了?毕竟当时作者还在用ubuntu12.10呢。</p>
-<p>于是下载最新的，就是binutils-2.27了。</p>
-<p>解压，编译，通过。</p>
-<p>嗯。再看看 $MACHTYPE ,咦，怎么和openSUSE 的一样了，都是”x86_64”。<br>再仔细一看，原来如此。是shell不同造成的。<br>zsh 显示的是短的，bash显示的是长的。<br>那我看看openSUSE的bash里的是啥吧，结果是“x86_64-suse-linux”</p>
-<p>那把 $HOST 改改看看能不能有所变化。</p>
-<p>数分钟后。。果然还是不行。</p>
-<p>最后 ，gcc -v     -&gt;    6.2.1 20160830</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://doublehou.github.io/2016/11/29/《深度探索Linux操作系统》构建过程中的问题/" data-id="ciw4fys340000t92tinsibr4d" class="article-share-link" data-share="baidu" data-title="《深度探索Linux操作系统》构建过程中的问题">Share</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/04/hello-world/" class="article-date">
-  <time datetime="2016-05-04T05:35:54.180Z" itemprop="datePublished">2016-05-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://doublehou.github.io/2016/05/04/hello-world/" data-id="ciw4fys4q0006t92t24i2pi1d" class="article-share-link" data-share="baidu" data-title="Hello World">Share</a>
-      
-
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
       
